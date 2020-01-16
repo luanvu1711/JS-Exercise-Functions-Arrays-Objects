@@ -173,7 +173,7 @@ function getCarInfoByIndex(inventory, index) {
 */
 function getLastCarInfo(arr/* code here */) {
   /* code here */
-  
+  return `this is a ${arr[0].car_make} ${arr[0].car_model} Town Car` ;
 }
 
 /**
@@ -253,6 +253,13 @@ function getModelYears(arr/* code here */) {
 function getOlderCars(arr,year/* code here */) {
   /* code here */
 
+    let cars = [];
+    for (let i = 0; i < arr.length; i++){
+      if(arr[i].car_year < year){
+        cars.push(arr[i]);
+      }
+    }
+  return cars;
 }
 /**
  * ### Challenge `getGermanCars`
@@ -314,8 +321,16 @@ const argTimesTwo = (num) => num*5; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
+function carMaker(num/* code here */) {
   /* code here */
+  let drive = function(distance){
+    let value = num + distance;
+    return value;
+  }
+return {
+  odometer: num,
+  drive
+}
 }
 
 /// ////// END OF CHALLENGE /////////
